@@ -3,6 +3,10 @@
   "version": "0.0.0-development",
   "description": "A library for deleting any $inject in an Angular project.",
   "main": "index.js",
+  "files": [
+    "index.js",
+    "dist"
+  ],
   "repository": "https://github.com/Nunnery/remove-dollar-inject.git",
   "author": "Richard Harrah <topplethenunnery@gmail.com>",
   "license": "MIT",
