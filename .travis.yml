@@ -7,13 +7,12 @@ node_js:
 before_install:
 - git fetch --unshallow
 before_script:
-- npm prune
 - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
 - chmod +x ./cc-test-reporter
 - "./cc-test-reporter before-build"
 script:
 - "/bin/bash .travis/lint-commits.sh"
-- npm run lint && npm run coverage
+- yarn run lint && yarn run coverage
 after_script:
 - "/bin/bash .travis/after-script.sh"
 after_success:
