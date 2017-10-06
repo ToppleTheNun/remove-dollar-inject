@@ -1,13 +1,22 @@
 sudo: false
 language: node_js
 node_js:
-  - "6"
-  - "7"
-  - "8"
+- '6'
+- '7'
+- '8'
 before_install:
-  - git fetch --unshallow
+- git fetch --unshallow
+before_script:
+- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+- chmod +x ./cc-test-reporter
+- "./cc-test-reporter before-build"
 script:
-  - /bin/bash .travis/lint-commits.sh
-  - npm run lint && npm run test
+- "/bin/bash .travis/lint-commits.sh"
+- npm run lint && npm run coverage
+after_script:
+- "/bin/bash .travis/after-script.sh"
 git:
   depth: 1
+env:
+  global:
+    secure: kbJMraysRGVrbEfxqZmo1767+aVk3JCPihlHYVirKXr7O203+2Q9JHlIl8VbOPTlTcrpNC0d+on0eDxiha1VceRuosoJgRktUXxS+SkhfcqSQTODuNQxI/GThEmVd9oNmjnMRBec+MNgH53i4VFcOXkbS1RdNaq+Fhha7U5o37xkDq+WF1tuYcxOySxLj733u7sktIWXFLdKk+jXJJimqwUdJk+wvcl1Y3uEHtG1kh7dAVCuNZPvtfTnADh0zfmHfS6b5B8pW8yTQInVXUaVFt23FhQeVMh16fk49nevJ+pqWfthZ/ZYh6QaudcAR/nVbKYTLBNQDKSQ2PiOQaUu4oCKn0pz4eKrOFSZGT6cBVDVjBLOlHjS13QRL/k25qd00HaccQL2LUYdJUztPrMjd/wTC1KB5O0SYUg5q7jVIXM2V7yCtQkfygrBmbeBPimRIJT4aUgTkMGDHZu4pQqLwZ7DRwWkLMYDGWTI/m/QUCVrX7ugcOdBy5SCkKQ42V7ETtZu6+gJvAk23MUviJuNYKTJ/MuhKlibzozZ3yGzoqFpQg6fWAh5UNHXTQKhO905CefPArS0oX1bQfvVHeZffMULuPJ8NLz4eMCZgSbgvxqSG3Budmu5fpeyoOvKw34CuQok+StneASosOA6Brth1ZI1WBp8hrPqmv2XSqE0Scs=
