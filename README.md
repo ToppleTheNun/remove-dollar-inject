@@ -1,5 +1,7 @@
 # remove-dollar-inject
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/Nunnery/remove-dollar-inject.svg)](https://greenkeeper.io/)
+
 [![Travis](https://img.shields.io/travis/Nunnery/remove-dollar-inject.svg?style=flat-square)](https://travis-ci.org/Nunnery/remove-dollar-inject)
 [![npm](https://img.shields.io/npm/v/remove-dollar-inject.svg?style=flat-square)](https://www.npmjs.com/package/remove-dollar-inject)
 [![Code Climate](https://img.shields.io/codeclimate/github/Nunnery/remove-dollar-inject.svg?style=flat-square)](https://codeclimate.com/github/Nunnery/remove-dollar-inject)
