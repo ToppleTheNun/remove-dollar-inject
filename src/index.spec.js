@@ -12,6 +12,13 @@ import {
 } from '../test/examples';
 import removeDollarInject from '.';
 
+const testOutputWithEol = (input, expectedOutput) => {
+  const output = removeDollarInject(input);
+  expect(output).toBeDefined();
+  // Use eol in order to eliminate issues caused by line endings.
+  expect(eol.auto(output)).toBe(expectedOutput);
+};
+
 describe('removeDollarInject', () => {
   describe('with null source', () => {
     it('returns empty string', () => {
@@ -31,37 +38,25 @@ describe('removeDollarInject', () => {
 
   describe('with ES5 source', () => {
     it('returns source without $inject', () => {
-      const output = removeDollarInject(examplePreJsEs5String);
-      expect(output).toBeDefined();
-      // Use eol in order to eliminate issues caused by line endings.
-      expect(eol.auto(output)).toBe(examplePostJsEs5String);
+      testOutputWithEol(examplePreJsEs5String, examplePostJsEs5String);
     });
   });
 
   describe('with ES5 (IIFE) source', () => {
     it('returns source without $inject', () => {
-      const output = removeDollarInject(exampleIifePreJsEs5String);
-      expect(output).toBeDefined();
-      // Use eol in order to eliminate issues caused by line endings.
-      expect(eol.auto(output)).toBe(exampleIifePostJsEs5String);
+      testOutputWithEol(exampleIifePreJsEs5String, exampleIifePostJsEs5String);
     });
   });
 
   describe('with ES6 source', () => {
     it('returns source without $inject', () => {
-      const output = removeDollarInject(examplePreJsEs6String);
-      expect(output).toBeDefined();
-      // Use eol in order to eliminate issues caused by line endings.
-      expect(eol.auto(output)).toBe(examplePostJsEs6String);
+      testOutputWithEol(examplePreJsEs6String, examplePostJsEs6String);
     });
   });
 
   describe('with ES6 (IIFE) source', () => {
     it('returns source without $inject', () => {
-      const output = removeDollarInject(exampleIifePreJsEs6String);
-      expect(output).toBeDefined();
-      // Use eol in order to eliminate issues caused by line endings.
-      expect(eol.auto(output)).toBe(exampleIifePostJsEs6String);
+      testOutputWithEol(exampleIifePreJsEs6String, exampleIifePostJsEs6String);
     });
   });
 });
