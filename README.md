@@ -34,7 +34,7 @@ console.log(output)
 ### ES5
 
 ```js
-const removeDollarInject = require('remove-dollar-inject');
+const removeDollarInject = require('remove-dollar-inject').default;
 
 const input = "ExampleService.$inject = ['$q']; angular.module('app.example').service('ExampleService', ExampleService);";
 const output = removeDollarInject(input);
