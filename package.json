@@ -1,0 +1,68 @@
+{
+  "name": "remove-dollar-inject",
+  "version": "0.0.0",
+  "description": "A library for deleting any $inject in an Angular project.",
+  "main": "index.js",
+  "repository": "https://github.com/Nunnery/remove-dollar-inject.git",
+  "author": "Richard Harrah <topplethenunnery@gmail.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=6"
+  },
+  "dependencies": {
+    "babel-generator": "^6.26.0",
+    "babel-traverse": "^6.26.0",
+    "babylon": "^6.18.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^4.1.0",
+    "@commitlint/config-angular": "^3.1.1",
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.0.1",
+    "babel-jest": "^21.2.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-flow": "^6.23.0",
+    "commitizen": "^2.9.6",
+    "cz-conventional-changelog": "^2.0.0",
+    "eol": "^0.9.1",
+    "eslint": "^4.8.0",
+    "eslint-config-google": "^0.9.1",
+    "eslint-config-prettier": "^2.6.0",
+    "eslint-plugin-flowtype": "^2.38.0",
+    "eslint-plugin-prettier": "^2.3.1",
+    "flow-bin": "^0.56.0",
+    "husky": "^0.14.3",
+    "jest": "^21.2.1",
+    "lint-staged": "^4.2.3",
+    "npm-watch": "^0.3.0",
+    "opn-cli": "^3.1.0",
+    "prettier": "^1.7.4",
+    "rimraf": "^2.6.2"
+  },
+  "scripts": {
+    "build": "babel src -d dist --ignore spec.js",
+    "clean": "rimraf dist",
+    "commitmsg": "commitlint -e",
+    "commit": "git-cz",
+    "coverage": "npm run test -- --coverage",
+    "format": "prettier --write src/**/*.js",
+    "lint": "eslint src",
+    "prebuild": "npm run clean",
+    "precommit": "lint-staged",
+    "prepush": "npm run lint && npm run test",
+    "prepublishOnly": "npm run build",
+    "test": "jest"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}

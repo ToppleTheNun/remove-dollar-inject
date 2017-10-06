@@ -1,0 +1,13 @@
+sudo: false
+language: node_js
+node_js:
+  - "6"
+  - "7"
+  - "8"
+before_install:
+  - git fetch --unshallow
+script:
+  - /bin/bash .travis/lint-commits.sh
+  - npm run lint && npm run test
+git:
+  depth: 1
