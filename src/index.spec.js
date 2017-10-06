@@ -1,5 +1,3 @@
-// @flow
-
 import eol from 'eol';
 
 import {
@@ -33,9 +31,7 @@ describe('removeDollarInject', () => {
 
   describe('with ES5 source', () => {
     it('returns source without $inject', () => {
-      const output = removeDollarInject(examplePreJsEs5String, {
-        esVersion: 5
-      });
+      const output = removeDollarInject(examplePreJsEs5String);
       expect(output).toBeDefined();
       // Use eol in order to eliminate issues caused by line endings.
       expect(eol.auto(output)).toBe(examplePostJsEs5String);
@@ -44,9 +40,7 @@ describe('removeDollarInject', () => {
 
   describe('with ES5 (IIFE) source', () => {
     it('returns source without $inject', () => {
-      const output = removeDollarInject(exampleIifePreJsEs5String, {
-        esVersion: 5
-      });
+      const output = removeDollarInject(exampleIifePreJsEs5String);
       expect(output).toBeDefined();
       // Use eol in order to eliminate issues caused by line endings.
       expect(eol.auto(output)).toBe(exampleIifePostJsEs5String);
@@ -55,9 +49,7 @@ describe('removeDollarInject', () => {
 
   describe('with ES6 source', () => {
     it('returns source without $inject', () => {
-      const output = removeDollarInject(examplePreJsEs6String, {
-        esVersion: 6
-      });
+      const output = removeDollarInject(examplePreJsEs6String);
       expect(output).toBeDefined();
       // Use eol in order to eliminate issues caused by line endings.
       expect(eol.auto(output)).toBe(examplePostJsEs6String);
@@ -66,9 +58,7 @@ describe('removeDollarInject', () => {
 
   describe('with ES6 (IIFE) source', () => {
     it('returns source without $inject', () => {
-      const output = removeDollarInject(exampleIifePreJsEs6String, {
-        esVersion: 6
-      });
+      const output = removeDollarInject(exampleIifePreJsEs6String);
       expect(output).toBeDefined();
       // Use eol in order to eliminate issues caused by line endings.
       expect(eol.auto(output)).toBe(exampleIifePostJsEs6String);

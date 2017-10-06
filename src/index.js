@@ -1,5 +1,3 @@
-// @flow
-
 import generate from 'babel-generator';
 import traverse from 'babel-traverse';
 import { parse } from 'babylon';
@@ -12,7 +10,7 @@ import { parse } from 'babylon';
  * @param {string} source String from which to remove any $inject
  * @return {string} Source string without $inject assignment expressions
  */
-export default function removeDollarInject(source: ?string = ''): string {
+export default function removeDollarInject(source = '') {
   // If we aren't given a source string, return an empty string.
   if (!source) {
     return '';

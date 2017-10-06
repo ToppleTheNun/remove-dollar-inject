@@ -1,12 +1,10 @@
 {
+  "parser": "babel-eslint",
   "extends": [
     "google",
-    "plugin:flowtype/recommended",
-    "prettier",
-    "prettier/flowtype"
+    "prettier"
   ],
   "plugins": [
-    "flowtype",
     "prettier"
   ],
   "parserOptions": {
