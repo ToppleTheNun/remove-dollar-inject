@@ -14,9 +14,7 @@
     "node": ">=6"
   },
   "dependencies": {
-    "babel-generator": "^6.26.0",
-    "babel-traverse": "^6.26.0",
-    "babylon": "^6.18.0"
+    "jscodeshift": "^0.3.32"
   },
   "devDependencies": {
     "@commitlint/cli": "^4.1.0",

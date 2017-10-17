@@ -1,6 +1,4 @@
-import generate from 'babel-generator';
-import traverse from 'babel-traverse';
-import { parse } from 'babylon';
+import j from 'jscodeshift';
 
 /**
  * Removes any $inject assignment expressions from a given source string.
@@ -16,38 +14,25 @@ export default function removeDollarInject(source = '') {
     return '';
   }
 
-  // Parse the source string into an AST using Babylon.
-  const sourceAst = parse(source);
-
-  // Modify the AST to remove any $inject expressions.
-  traverse(sourceAst, {
-    enter(path) {
-      if (path.node.type !== 'AssignmentExpression') {
-        return;
+  // Parse the source string into an AST using jscodeshift.
+  const root = j(source);
+  // Find all AssignmentExpressions that have left MemberExpressions
+  // with an Identifier of $inject.
+  const assignmentExpressions = root.find(j.AssignmentExpression, {
+    left: {
+      type: 'MemberExpression',
+      property: {
+        type: 'Identifier',
+        name: '$inject'
       }
-      const left = path.get('left');
-      const right = path.get('right');
-      if (
-        left.node.type !== 'MemberExpression' ||
-        right.node.type !== 'ArrayExpression'
-      ) {
-        return;
-      }
-      const property = left.get('property');
-      if (
-        property.node.type !== 'Identifier' ||
-        !property.node.name ||
-        property.node.name !== '$inject'
-      ) {
-        return;
-      }
-      path.remove();
+    },
+    right: {
+      type: 'ArrayExpression'
     }
   });
+  // Remove the expressions.
+  assignmentExpressions.remove();
 
-  // Convert the modified AST into a JSON representation using babel-generator.
-  const output = generate(sourceAst, { comments: true }, source);
-
-  // Return the code field from the JSON representation or an empty string if unable.
-  return output.code || '';
+  // Recreate the AST.
+  return root.toSource();
 }
