@@ -11,7 +11,7 @@
   "author": "Richard Harrah <topplethenunnery@gmail.com>",
   "license": "MIT",
   "engines": {
-    "node": ">=6"
+    "node": ">=5"
   },
   "dependencies": {
     "jscodeshift": "^0.3.32"
