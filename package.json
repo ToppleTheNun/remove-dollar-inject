@@ -17,7 +17,7 @@
     "jscodeshift": "^0.3.32"
   },
   "devDependencies": {
-    "@commitlint/cli": "^4.1.0",
+    "@commitlint/cli": "^5.0.0",
     "@commitlint/config-angular": "^4.2.0",
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.0.1",
