@@ -14,7 +14,7 @@
     "node": ">=5"
   },
   "dependencies": {
-    "jscodeshift": "^0.3.32"
+    "jscodeshift": "^0.4.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^4.1.0",
