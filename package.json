@@ -27,7 +27,7 @@
     "babel-preset-env": "^1.6.1",
     "commitizen": "^2.9.6",
     "cz-conventional-changelog": "^2.1.0",
-    "documentation": "^7.1.0",
+    "documentation": "^8.0.1",
     "eol": "^0.9.1",
     "eslint": "^5.0.1",
     "eslint-config-google": "^0.9.1",
