@@ -1,4 +1,3 @@
-# lint-commits.sh
 #!/bin/bash
 set -e
 set -u
