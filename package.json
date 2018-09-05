@@ -30,7 +30,7 @@
     "documentation": "^8.0.1",
     "eol": "^0.9.1",
     "eslint": "^5.0.1",
-    "eslint-config-google": "^0.9.1",
+    "eslint-config-google": "^0.10.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-prettier": "^2.6.0",
     "husky": "^0.14.3",
