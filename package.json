@@ -43,15 +43,12 @@
   "scripts": {
     "build": "babel src -d dist --ignore spec.js",
     "clean": "rimraf dist",
-    "commitmsg": "commitlint -e",
     "commit": "git-cz",
     "coverage": "npm run test -- --coverage",
     "docs": "documentation readme src --section=API",
     "format": "prettier --write src/**/*.js",
     "lint": "eslint src",
     "prebuild": "npm run docs && npm run clean",
-    "precommit": "lint-staged",
-    "prepush": "npm run lint && npm run test",
     "prepublishOnly": "npm run build",
     "test": "jest",
     "travis-commitlint": "commitlint-travis",
@@ -76,6 +73,13 @@
         "lines": 90,
         "statements": 90
       }
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -e",
+      "pre-commit": "lint-staged",
+      "pre-push": "npm run lint && npm run test"
     }
   }
 }
