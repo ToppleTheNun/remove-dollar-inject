@@ -3,31 +3,19 @@ const fs = require('fs');
 const path = require('path');
 
 // Get all of the paths that we need for testing purposes
-const examplePreJsEs5Path = path.join(__dirname, '../test/example-pre-es5.js');
-const examplePostJsEs5Path = path.join(
-  __dirname,
-  '../test/example-post-es5.js'
-);
-const exampleIifePreJsEs5Path = path.join(
-  __dirname,
-  '../test/iife-example-pre-es5.js'
-);
+const examplePreJsEs5Path = path.join(__dirname, 'example-pre-es5.js');
+const examplePostJsEs5Path = path.join(__dirname, 'example-post-es5.js');
+const exampleIifePreJsEs5Path = path.join(__dirname, 'iife-example-pre-es5.js');
 const exampleIifePostJsEs5Path = path.join(
   __dirname,
-  '../test/iife-example-post-es5.js'
+  'iife-example-post-es5.js'
 );
-const examplePreJsEs6Path = path.join(__dirname, '../test/example-pre-es6.js');
-const examplePostJsEs6Path = path.join(
-  __dirname,
-  '../test/example-post-es6.js'
-);
-const exampleIifePreJsEs6Path = path.join(
-  __dirname,
-  '../test/iife-example-pre-es6.js'
-);
+const examplePreJsEs6Path = path.join(__dirname, 'example-pre-es6.js');
+const examplePostJsEs6Path = path.join(__dirname, 'example-post-es6.js');
+const exampleIifePreJsEs6Path = path.join(__dirname, 'iife-example-pre-es6.js');
 const exampleIifePostJsEs6Path = path.join(
   __dirname,
-  '../test/iife-example-post-es6.js'
+  'iife-example-post-es6.js'
 );
 
 // Read all of the examples to strings
