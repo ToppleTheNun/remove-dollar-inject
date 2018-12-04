@@ -14,7 +14,7 @@
     "node": ">=5"
   },
   "dependencies": {
-    "jscodeshift": "^0.5.0"
+    "jscodeshift": "^0.6.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
