@@ -2,12 +2,11 @@
 
 [![Travis](https://img.shields.io/travis/Nunnery/remove-dollar-inject.svg?style=flat-square)](https://travis-ci.org/Nunnery/remove-dollar-inject)
 [![npm](https://img.shields.io/npm/v/remove-dollar-inject.svg?style=flat-square)](https://www.npmjs.com/package/remove-dollar-inject)
-[![Code Climate](https://img.shields.io/codeclimate/github/Nunnery/remove-dollar-inject.svg?style=flat-square)](https://codeclimate.com/github/Nunnery/remove-dollar-inject)
-[![Code Climate](https://img.shields.io/codeclimate/coverage/github/Nunnery/remove-dollar-inject.svg?style=flat-square)](https://codeclimate.com/github/Nunnery/remove-dollar-inject/coverage)
+[![Codecov](https://img.shields.io/codecov/c/gh/Nunnery/remove-dollar-inject.svg?style=flat-square)](https://codecov.io/gh/Nunnery/remove-dollar-inject)
 [![Greenkeeper badge](https://img.shields.io/badge/Greenkeeper-enabled-brightgreen.svg?style=flat-square)](https://greenkeeper.io/)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=flat-square)](https://github.com/semantic-release/semantic-release)
 
-> A library for removing $inject from Angular source files.
+> A library for removing \$inject from Angular source files.
 
 ## Install
 
@@ -24,9 +23,10 @@ or
 ```js
 import removeDollarInject from 'remove-dollar-inject';
 
-const input = "ExampleService.$inject = ['$q']; angular.module('app.example').service('ExampleService', ExampleService);";
+const input =
+  "ExampleService.$inject = ['$q']; angular.module('app.example').service('ExampleService', ExampleService);";
 const output = removeDollarInject(input);
-console.log(output)
+console.log(output);
 /*
  * angular.module('app.example').service('ExampleService', ExampleService);
  */
@@ -37,9 +37,10 @@ console.log(output)
 ```js
 const removeDollarInject = require('remove-dollar-inject');
 
-const input = "ExampleService.$inject = ['$q']; angular.module('app.example').service('ExampleService', ExampleService);";
+const input =
+  "ExampleService.$inject = ['$q']; angular.module('app.example').service('ExampleService', ExampleService);";
 const output = removeDollarInject(input);
-console.log(output)
+console.log(output);
 /*
  * angular.module('app.example').service('ExampleService', ExampleService);
  */
@@ -51,15 +52,15 @@ console.log(output)
 
 ### removeDollarInject
 
-Removes any $inject assignment expressions from a given source string.
+Removes any \$inject assignment expressions from a given source string.
 
 Will return an empty string for any null/undefined/void values.
 
 **Parameters**
 
--   `source` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** String from which to remove any $inject (optional, default `''`)
+- `source` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** String from which to remove any \$inject (optional, default `''`)
 
-Returns **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** Source string without $inject assignment expressions
+Returns **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** Source string without \$inject assignment expressions
 
 ## License
 
