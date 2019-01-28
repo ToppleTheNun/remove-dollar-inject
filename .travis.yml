@@ -1,33 +1,30 @@
 sudo: false
 language: node_js
 node_js:
-- '8'
-- '9'
-- '10'
-- '11'
+  - '8'
+  - '9'
+  - '10'
+  - '11'
 before_install:
-- git fetch --unshallow
-before_script:
-- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-- chmod +x ./cc-test-reporter
-- "./cc-test-reporter before-build"
+  - git fetch --unshallow
 script:
-- "/bin/bash .travis/lint-commits.sh"
-- yarn run lint && yarn run coverage
+  - '/bin/bash .travis/lint-commits.sh'
+  - yarn lint && yarn test
 after_script:
-- "/bin/bash .travis/after-script.sh"
+  - '/bin/bash .travis/after-script.sh'
 after_success:
-- "/bin/bash .travis/after-success.sh"
+  - '/bin/bash .travis/after-success.sh'
 git:
   depth: 1
 cache:
   directories:
-  - node_modules
+    - node_modules
 notifications:
   email: false
 branches:
   except:
-  - /^v\d+\.\d+\.\d+$/
+    - "/^v\\d+\\.\\d+\\.\\d+$/"
 env:
   global:
-    secure: kbJMraysRGVrbEfxqZmo1767+aVk3JCPihlHYVirKXr7O203+2Q9JHlIl8VbOPTlTcrpNC0d+on0eDxiha1VceRuosoJgRktUXxS+SkhfcqSQTODuNQxI/GThEmVd9oNmjnMRBec+MNgH53i4VFcOXkbS1RdNaq+Fhha7U5o37xkDq+WF1tuYcxOySxLj733u7sktIWXFLdKk+jXJJimqwUdJk+wvcl1Y3uEHtG1kh7dAVCuNZPvtfTnADh0zfmHfS6b5B8pW8yTQInVXUaVFt23FhQeVMh16fk49nevJ+pqWfthZ/ZYh6QaudcAR/nVbKYTLBNQDKSQ2PiOQaUu4oCKn0pz4eKrOFSZGT6cBVDVjBLOlHjS13QRL/k25qd00HaccQL2LUYdJUztPrMjd/wTC1KB5O0SYUg5q7jVIXM2V7yCtQkfygrBmbeBPimRIJT4aUgTkMGDHZu4pQqLwZ7DRwWkLMYDGWTI/m/QUCVrX7ugcOdBy5SCkKQ42V7ETtZu6+gJvAk23MUviJuNYKTJ/MuhKlibzozZ3yGzoqFpQg6fWAh5UNHXTQKhO905CefPArS0oX1bQfvVHeZffMULuPJ8NLz4eMCZgSbgvxqSG3Budmu5fpeyoOvKw34CuQok+StneASosOA6Brth1ZI1WBp8hrPqmv2XSqE0Scs=
+    - secure: kbJMraysRGVrbEfxqZmo1767+aVk3JCPihlHYVirKXr7O203+2Q9JHlIl8VbOPTlTcrpNC0d+on0eDxiha1VceRuosoJgRktUXxS+SkhfcqSQTODuNQxI/GThEmVd9oNmjnMRBec+MNgH53i4VFcOXkbS1RdNaq+Fhha7U5o37xkDq+WF1tuYcxOySxLj733u7sktIWXFLdKk+jXJJimqwUdJk+wvcl1Y3uEHtG1kh7dAVCuNZPvtfTnADh0zfmHfS6b5B8pW8yTQInVXUaVFt23FhQeVMh16fk49nevJ+pqWfthZ/ZYh6QaudcAR/nVbKYTLBNQDKSQ2PiOQaUu4oCKn0pz4eKrOFSZGT6cBVDVjBLOlHjS13QRL/k25qd00HaccQL2LUYdJUztPrMjd/wTC1KB5O0SYUg5q7jVIXM2V7yCtQkfygrBmbeBPimRIJT4aUgTkMGDHZu4pQqLwZ7DRwWkLMYDGWTI/m/QUCVrX7ugcOdBy5SCkKQ42V7ETtZu6+gJvAk23MUviJuNYKTJ/MuhKlibzozZ3yGzoqFpQg6fWAh5UNHXTQKhO905CefPArS0oX1bQfvVHeZffMULuPJ8NLz4eMCZgSbgvxqSG3Budmu5fpeyoOvKw34CuQok+StneASosOA6Brth1ZI1WBp8hrPqmv2XSqE0Scs=
+    - secure: a2i56p2LAvoP6audK774DEadwqAEKgvaMP/RFgYTR+pvzXoBCHjpqyL3TuV6LFOTRXNKCCHElXzveTbMe2Xu5ko6DT/I8jWLZe1dmjmZwmJhfVvWbeGDrcpSXV5HclXyNMo7tHv+EnOK4wzAvKhC1LtFGMSQCsrg6hsxGozbnwrbsTcGpomsPkhVWd0d/c1BC9vBy3LNiCFu96rWkB577QVONf0G4u4PoQWisZcl2nl1OdcMrbYUUt+Xgsu85BXiWoeuWkSM30xRWeHGP6O6nPXRxC4LSVcBt4zdQJfI8jt83T/8aoTVbV3Upfmh6giQQpkcNhePSk0J1oPtEmPxTPUpzEAJ6VxSMqMF6mQZRThHd7tCum7u9IkTdR3Jnbpj6Q6macTTvQpxOaTx3IBmYpnT5tKFqSaRGAd/Z1TeP6aEYOenrK/MFCWdzIeFxMXrVJQmkZxeaCqnypkvkIUu5371Tv5KojKIdWOmEiFQumCJrUT5ghkJQ79g4GHCuj8L0ibEirkfDPSb4qIGrSIrzVRbYLtLzDpO8E8iY/cZT17fuFC8ljg2XR3ULh9GrYKz1PZhfrgjE5WMe9ZO4pHLIX7bzMoxPM3eLoIL1lMOt8ehvB2rx073GRgMhE0/QCutpG0fD1rzNv3gIItiOybgEuym4ljl6xj5v1y/5l1X1Ik=
