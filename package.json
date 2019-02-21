@@ -28,7 +28,7 @@
     "babel-jest": "24.0.0",
     "babel-plugin-add-module-exports": "1.0.0",
     "codecov": "3.2.0",
-    "commitizen": "3.0.5",
+    "commitizen": "3.0.6",
     "cz-conventional-changelog": "2.1.0",
     "documentation": "9.1.1",
     "eol": "0.9.1",
