@@ -1,7 +1,7 @@
 {
   "parser": "babel-eslint",
   "extends": [
-    "google",
+    "airbnb-base",
     "prettier"
   ],
   "plugins": [
@@ -11,12 +11,13 @@
     "ecmaVersion": 2016,
     "sourceType": "module",
     "ecmaFeatures": {
-      "jsx": true
+      "jsx": false
     }
   },
   "env": {
     "es6": true,
-    "node": true
+    "node": true,
+    "jest": true
   },
   "rules": {
     "linebreak-style": ["off"],
