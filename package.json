@@ -30,7 +30,7 @@
     "codecov": "3.3.0",
     "commitizen": "3.0.7",
     "cz-conventional-changelog": "2.1.0",
-    "documentation": "9.3.1",
+    "documentation": "10.0.0",
     "eol": "0.9.1",
     "eslint": "5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
