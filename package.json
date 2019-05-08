@@ -42,7 +42,7 @@
     "prettier": "1.16.4",
     "pretty-quick": "1.10.0",
     "rimraf": "2.6.3",
-    "semantic-release": "15.13.3"
+    "semantic-release": "15.13.12"
   },
   "scripts": {
     "build": "babel src -d dist --ignore spec.js",
