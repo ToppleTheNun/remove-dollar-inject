@@ -32,7 +32,7 @@
     "cz-conventional-changelog": "2.1.0",
     "documentation": "11.0.0",
     "eol": "0.9.1",
-    "eslint": "5.16.0",
+    "eslint": "6.0.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-prettier": "4.3.0",
     "eslint-plugin-import": "^2.17.2",
