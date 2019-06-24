@@ -1,10 +1,10 @@
 # remove-dollar-inject
 
-[![Travis](https://img.shields.io/travis/Nunnery/remove-dollar-inject.svg?style=flat-square)](https://travis-ci.org/Nunnery/remove-dollar-inject)
-[![npm](https://img.shields.io/npm/v/remove-dollar-inject.svg?style=flat-square)](https://www.npmjs.com/package/remove-dollar-inject)
-[![Codecov](https://img.shields.io/codecov/c/gh/Nunnery/remove-dollar-inject.svg?style=flat-square)](https://codecov.io/gh/Nunnery/remove-dollar-inject)
-[![Greenkeeper badge](https://img.shields.io/badge/Greenkeeper-enabled-brightgreen.svg?style=flat-square)](https://greenkeeper.io/)
-[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=flat-square)](https://github.com/semantic-release/semantic-release)
+[![Travis](https://img.shields.io/travis/Nunnery/remove-dollar-inject/master.svg?style=for-the-badge)](https://travis-ci.org/Nunnery/remove-dollar-inject)
+[![npm](https://img.shields.io/npm/v/remove-dollar-inject.svg?style=for-the-badge)](https://www.npmjs.com/package/remove-dollar-inject)
+[![Codecov](https://img.shields.io/codecov/c/gh/Nunnery/remove-dollar-inject.svg?style=for-the-badge)](https://codecov.io/gh/Nunnery/remove-dollar-inject)
+[![Greenkeeper badge](https://img.shields.io/badge/Greenkeeper-enabled-brightgreen.svg?style=for-the-badge)](https://greenkeeper.io/)
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=for-the-badge)](https://github.com/semantic-release/semantic-release)
 
 > A library for removing \$inject from Angular source files.
 
