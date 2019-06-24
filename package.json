@@ -18,31 +18,31 @@
   },
   "devDependencies": {
     "@babel/cli": "7.4.4",
-    "@babel/core": "7.4.4",
-    "@babel/preset-env": "7.4.4",
-    "@commitlint/cli": "7.6.1",
-    "@commitlint/config-conventional": "7.6.0",
-    "@commitlint/travis-cli": "7.6.1",
+    "@babel/core": "7.4.5",
+    "@babel/preset-env": "7.4.5",
+    "@commitlint/cli": "8.0.0",
+    "@commitlint/config-conventional": "8.0.0",
+    "@commitlint/travis-cli": "8.0.0",
     "babel-core": "7.0.0-bridge.0",
-    "babel-eslint": "10.0.1",
+    "babel-eslint": "10.0.2",
     "babel-jest": "24.8.0",
     "babel-plugin-add-module-exports": "1.0.2",
     "codecov": "3.5.0",
     "commitizen": "3.1.1",
     "cz-conventional-changelog": "2.1.0",
-    "documentation": "11.0.0",
+    "documentation": "11.0.1",
     "eol": "0.9.1",
     "eslint": "5.16.0",
-    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-airbnb-base": "13.1.0",
     "eslint-config-prettier": "4.3.0",
-    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-import": "2.17.2",
     "eslint-plugin-prettier": "3.1.0",
-    "husky": "2.3.0",
+    "husky": "2.4.1",
     "jest": "24.8.0",
-    "prettier": "1.17.1",
-    "pretty-quick": "1.10.0",
+    "prettier": "1.18.2",
+    "pretty-quick": "1.11.1",
     "rimraf": "2.6.3",
-    "semantic-release": "15.13.12"
+    "semantic-release": "15.13.16"
   },
   "scripts": {
     "build": "babel src -d dist --ignore spec.js",
@@ -77,7 +77,7 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint -e",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "pre-commit": "pretty-quick --staged",
       "pre-push": "npm run lint && npm run test"
     }
